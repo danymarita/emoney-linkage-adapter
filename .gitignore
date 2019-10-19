@@ -1,0 +1,10 @@
+# Logs
+logfile.log
+uncaughtexception.log
+
+# Dependency directories
+node_modules/
+
+#config
+config/
+.env

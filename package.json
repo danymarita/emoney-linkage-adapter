@@ -1,0 +1,23 @@
+{
+  "name": "emoney-linkage-adapter",
+  "version": "1.0.0",
+  "description": "Paytren 5.17 Linkage Adapter",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dany M Pradana",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.2",
+    "body-parser": "^1.19.0",
+    "config": "^3.2.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "express-basic-auth": "^1.2.0",
+    "grpc": "^1.24.0",
+    "joi": "^14.3.1",
+    "winston": "^3.2.1"
+  }
+}
