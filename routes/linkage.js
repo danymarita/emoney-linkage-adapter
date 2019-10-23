@@ -3,7 +3,8 @@ const {validateRegisterToken, validateUnregisterToken, validateRemoveLinkage} = 
 const router = express.Router();
 const grpc_client = require('../grpc-clients/linkage');
 const winston = require('winston');
-require('dotenv').config();
+const config = require('config');
+// require('dotenv').config();
 
 router.get('/register-token', (req, res, next) => {
     const { error } = validateRegisterToken(req.body); 
@@ -13,7 +14,7 @@ router.get('/register-token', (req, res, next) => {
     });
 
     const timeObject = new Date();
-    const date = new Date(timeObject.getTime() + parseInt(process.env.LINKAGE_GRPC_EXPIRED)).getTime();
+    const date = new Date(timeObject.getTime() + parseInt(config.get('exp'))).getTime();
     const payload = {
         "clientId": req.body.clientId,
         "subject": req.body.subject,
