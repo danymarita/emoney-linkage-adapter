@@ -25,7 +25,7 @@ router.get('/register-token', (req, res, next) => {
             winston.info(JSON.stringify(response));
             return res.send(response);
         } else {
-            winston.error(error.message);
+            winston.error(error.message, { error: error });
             return res.status(500).send({
                 responseCode: 50,
                 responseMessage: "Terjadi kesalahan sistem, silahkan coba lagi."
@@ -51,7 +51,7 @@ router.get('/unregister-token', (req, res, next) => {
             winston.info(JSON.stringify(response));
             return res.send(response);
         } else {
-            winston.error(error.message);
+            winston.error(error.message, { error: error });
             return res.status(500).send({
                 responseCode: 50,
                 responseMessage: "Terjadi kesalahan sistem, silahkan coba lagi."
@@ -89,7 +89,7 @@ router.get('/remove-linkage', (req, res, next) => {
             winston.info(JSON.stringify(response));
             return res.send(response);
         } else {
-            winston.error(error.message);
+            winston.error(error.message, { error: error });
             return res.status(500).send({
                 responseCode: 50,
                 responseMessage: "Terjadi kesalahan sistem, silahkan coba lagi."

@@ -5,5 +5,8 @@ module.exports = function(err, req, res, next){
     // Level
     // error, warn, info, verbose, debug, silly
     winston.error(err.message, { metadata: { stacktrace: err } });
-    res.status(500).send('Something error.');
+    res.status(500).send({
+        responseCode: 50,
+        responseMessage: "Terjadi kesalahan sistem, silahkan coba lagi."
+    });
 }
