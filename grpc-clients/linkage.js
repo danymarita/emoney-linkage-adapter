@@ -3,8 +3,9 @@ const PROTO_PATH = "protos/linkage.proto";
 // var async = require('async');
 const grpc = require("grpc");
 const protoLoader = require("@grpc/proto-loader");
-const grpc_server = process.env.LINKAGE_GRPC_SERVER;
-const basic_auth = process.env.LINKAGE_GRPC_BASIC_AUTH;
+const config = require('config');
+const grpc_server = config.get("linkage_grpc_server");
+const basic_auth = config.get("linkage_grpc_basic_auth");
 
 const protoLoaderConf = protoLoader.loadSync(PROTO_PATH,
     {

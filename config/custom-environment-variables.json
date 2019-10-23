@@ -1,0 +1,6 @@
+{
+    "basic_auth_user" : "BASIC_AUTH_USER",
+    "basic_auth_password" : "BASIC_AUTH_PASSWORD",
+    "linkage_grpc_server" : "LINKAGE_GRPC_SERVER",
+    "linkage_grpc_basic_auth" : "LINKAGE_GRPC_BASIC_AUTH"
+}

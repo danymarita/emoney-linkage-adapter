@@ -6,7 +6,6 @@ uncaughtexception.log
 node_modules/
 
 #config
-config/
 .env
 
 #exec file

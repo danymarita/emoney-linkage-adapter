@@ -4,7 +4,6 @@ const router = express.Router();
 const grpc_client = require('../grpc-clients/linkage');
 const winston = require('winston');
 const config = require('config');
-// require('dotenv').config();
 
 router.get('/register-token', (req, res, next) => {
     const { error } = validateRegisterToken(req.body); 

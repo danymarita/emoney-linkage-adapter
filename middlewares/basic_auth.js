@@ -1,6 +1,7 @@
 const expressBasicAuth = require('express-basic-auth');
-const basic_user = process.env.BASIC_USER;
-const basic_password = process.env.BASIC_PASSWORD;
+const config = require('config');
+const basic_auth_user = config.get("basic_auth_user");
+const basic_auth_password = config.get("basic_auth_password");
 
 const basicAuth = expressBasicAuth({
     authorizer: basicAuthorizer,
@@ -20,8 +21,8 @@ const basicAuth = expressBasicAuth({
 });
 
 function basicAuthorizer(username, password){
-    const userMatches = expressBasicAuth.safeCompare(username, basic_user);
-    const passwordMatches = expressBasicAuth.safeCompare(password, basic_password);
+    const userMatches = expressBasicAuth.safeCompare(username, basic_auth_user);
+    const passwordMatches = expressBasicAuth.safeCompare(password, basic_auth_password);
  
     return userMatches & passwordMatches;
 }
